@@ -7,6 +7,7 @@
     "@babel/runtime": "^7.7.2",
     "gh-pages": "^2.1.1",
     "karma": "^3.1.4",
+    "lodash.template": "^4.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
