@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import SassComponent from "./SassComponent";
+import styles from './App.css';
+
+console.log(styles);
 
 class App extends Component {
   render() {
-    return <SassComponent />;
+    return (
+      <div className={styles.box}>
+        
+      </div>
+    );
   }
 }
 
