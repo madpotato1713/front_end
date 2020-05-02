@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Home, About, Posts } from 'pages';
+import { Home, About, Posts } from 'pages/index.async';
 import Menu from 'components/Menu';
 
 const App = () => {
