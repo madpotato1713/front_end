@@ -139,6 +139,17 @@ module.exports = function(webpackEnv) {
       : isEnvDevelopment && 'cheap-module-source-map',
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
+    // entry: {
+    //   app: [
+    //     isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient'), paths.appIndexJs,
+    //   ],
+    //   vendor: [
+    //     // require.resolve('./polyfills'),
+    //     'react',
+    //     'react-dom',
+    //     'react-router-dom',
+    //   ],
+    // },
     entry: [
       // Include an alternative client for WebpackDevServer. A client's job is to
       // connect to WebpackDevServer by a socket and get notified about changes.
