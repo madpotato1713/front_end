@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App';
-import './index.css';
+import './styles/main.scss';
+import App from './components/App';
 
 //리덕스 관련 불러오기
+import modules from './modules';
 import { createStore } from 'redux';
-import reducers from './reducers';
 import { Provider } from 'react-redux';
 
+import * as serviceWorker from './serviceWorker';
+
 //스토어 생성
-const store = createStore(reducers, window.devToolsExtenstion && window.devToolsExtenstion());
+const store = createStore(modules, window.devToolsExtenstion && window.devToolsExtenstion());
 
 ReactDOM.render(
     <Provider store={store}>
@@ -17,3 +19,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+serviceWorker.unregister();
