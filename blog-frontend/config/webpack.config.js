@@ -455,15 +455,30 @@ module.exports = function(webpackEnv) {
             // By default we support SASS Modules with the
             // extensions .module.scss or .module.sass
             {
+              // test: sassRegex,
+              // exclude: sassModuleRegex,
+              // use: getStyleLoaders(
+              //   {
+              //     importLoaders: 3,
+              //     sourceMap: isEnvProduction && shouldUseSourceMap,
+              //   },
+              //   'sass-loader'
+              // ),
               test: sassRegex,
               exclude: sassModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 3,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'sass-loader'
-              ),
+              use: getStyleLoaders({
+                importLoaders: 2,
+                sourceMap: isEnvProduction && shouldUseSourceMap
+              }).concat({
+                loader: require.resolve('sass-loader'),
+                options: {
+                  // prependData:`@import 'utils';`,
+                  sassOptions: {
+                    includePaths: [paths.globalStyles],
+                    sourceMap: isEnvProduction && shouldUseSourceMap,
+                  }
+                }
+              }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
