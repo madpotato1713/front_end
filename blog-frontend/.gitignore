@@ -5,13 +5,6 @@
 /.pnp
 .pnp.js
 
-blog-frontend/node_modules
-blog-frontend/.pnp
-blog-frontend.pnp.js
-blog-backend/node_modules
-blog-backend/.pnp
-blog-backend.pnp.js
-
 # testing
 /coverage
 
