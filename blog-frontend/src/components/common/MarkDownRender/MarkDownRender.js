@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './MarkDownRender.scss';
+import styles from './MarkdownRender.scss';
 import classNames from 'classnames/bind';
 
 import marked from 'marked';
@@ -15,7 +15,7 @@ import 'prismjs/components/prism-css.min.js';
 
 const cx = classNames.bind(styles);
 
-class MarkDownRender extends Component {
+class MarkdownRender extends Component {
     state = {
         html: '',
     };
@@ -40,8 +40,12 @@ class MarkDownRender extends Component {
         super(props);
         const { markdown } = props;
         this.state = {
-            html: markdown ? marked(props.markdown, { breaks: true, sanitize: true}) : '',
+            html: markdown ? marked(props.markdown, { breaks: true, sanitize: true }) : '',
         }
+    }
+
+    componentDidMount() {
+        Prism.highlightAll();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -66,4 +70,4 @@ class MarkDownRender extends Component {
     }
 }
 
-export default MarkDownRender;
+export default MarkdownRender;

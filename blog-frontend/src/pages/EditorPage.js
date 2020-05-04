@@ -1,6 +1,6 @@
 import React from 'react';
 import EditorTemplate from 'components/editor/EditorTemplate';
-import EditorHeader from 'components/editor/EditorHeader';
+import EidtorHeaderContainer from 'containers/editor/EidtorHeaderContainer';
 import EditorPaneContainer from 'containers/editor/EditorPaneContainer';
 import PreviewPaneContainer from 'containers/editor/PreviewPaneContainer';
 
@@ -8,7 +8,7 @@ const EditorPage = () => {
     return (
         <div>
             <EditorTemplate
-                header={<EditorHeader />}
+                header={<EidtorHeaderContainer />}
                 editor={<EditorPaneContainer />}
                 preview={<PreviewPaneContainer />}
             />

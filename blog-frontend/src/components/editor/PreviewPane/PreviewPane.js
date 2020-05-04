@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PreviewPane.scss';
 import classNames from 'classnames/bind';
-import MarkdownRender from 'components/common/MarkDownRender';
+import MarkdownRender from 'components/common/MarkdownRender';
 
 const cx = classNames.bind(styles);
 
