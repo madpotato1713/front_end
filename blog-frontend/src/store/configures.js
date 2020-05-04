@@ -6,7 +6,6 @@ const reducers = combineReducers(modules);
 const middlewares = [penderMiddleware()];
 
 const isDev = process.env.NODE_ENV === 'development';
-console.log('!!!', process.env);
 const devtools = isDev && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 const composeEnhancers = devtools || compose;
 
