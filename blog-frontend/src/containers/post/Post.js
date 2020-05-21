@@ -25,9 +25,6 @@ class Post extends Component {
         if (loading) return null;    //로딩 중일때는 아무것도 보여주지 않음
 
         const { title, body, publishedDate, tags } = post.toJS();
-        
-        console.log(title, body, publishedDate, tags);
-        console.log(post.toJS().body);
 
         return (
             <div>

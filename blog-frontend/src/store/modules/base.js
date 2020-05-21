@@ -27,6 +27,6 @@ export default handleActions({
     },
     [HIDE_MODAL]: (state, action) => {
         const { payload: modalName } = action;
-        return state.setIn(['modal', modalName], true);
+        return state.setIn(['modal', modalName], false);
     }
 }, initialState);
