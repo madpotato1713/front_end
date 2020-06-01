@@ -1,8 +1,9 @@
 import React from 'react';
 
 export default function asyncComponent(getComponent) {
-    return class AsyncComponent extends React.Component {
+    class AsyncComponent extends React.Component {
         static Component = null;
+
         state = { Component: AsyncComponent.Component };
 
         constructor(props) {
@@ -22,4 +23,13 @@ export default function asyncComponent(getComponent) {
             return null;
         }
     }
+
+    // 서버사이드 렌더링/코드 스플리팅 충돌 해결
+    AsyncComponent.getComponent = () => {
+        return getComponent().then(({default: Component}) => {
+            AsyncComponent.Component = Component;
+        });
+    }
+
+    return AsyncComponent;
 }
