@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
-import PaintContainer from './paint/container/PaintContainer';
+import AlgorithmContainer from './algorithm';
+import PaintContainer from './paint';
 
-const App = () => {
-  return (
-    <div className="App">
-      <PaintContainer/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Route exact path="/" component={PaintContainer} />
+        <Route path="/algorithm" component={AlgorithmContainer} />
+      </div>
+    );
+  }
 }
 
 export default App;
